@@ -90,7 +90,7 @@ try {
             $messages[] = '<div class="error">Вы не выбрали языки программирования.</div>';
         }
 
-printf('Выберите языки программирования: %s<br>', $values['language']);
+// printf('Выберите языки программирования: %s', $values['language']);
 // Складываем предыдущие значения полей в массив, если есть.
 $values = array();
 $values['fio'] = empty($_COOKIE['fio_value']) ? '' : $_COOKIE['fio_value'];
