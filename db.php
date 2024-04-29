@@ -31,7 +31,7 @@ try {
         if (!empty($_COOKIE['save'])) {
           // Удаляем куку, указывая время устаревания в прошлом.
           setcookie('save', '', 100000);
-          $messages[] = print '<div class="save"> Спасибо, результаты сохранены.</div>';
+          $messages[] = '<div class="save"> Спасибо, результаты сохранены.</div>';
         }
         // Складываем признак ошибок в массив.
         $errors = array();
@@ -149,7 +149,6 @@ else {
             $selected_languages = $_POST['language'];
             setcookie('language_value', serialize($selected_languages), time() + 12 * 30 * 24 * 60 * 60);
         }
- setcookie('language_error', '', 100000);
     if ($errors) {
         // При наличии ошибок перезагружаем страницу и завершаем работу скрипта.
         header('Location: db.php');
@@ -164,6 +163,7 @@ else {
         setcookie('someGroupName_error', '', 100000);
         setcookie('bio_error', '', 100000);
         setcookie('checkt_error', '', 100000);
+        setcookie('language_error', '', 100000);
       }
         $stmt = $db->prepare("INSERT INTO users (full_name, phone,email,birth_date,gender,bio,contract_agreed) VALUES (:full_name, :phone,:email,:birth_date,:gender,:bio,:contract_agreed)");
         $login = $_POST['fio'];
