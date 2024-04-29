@@ -47,12 +47,12 @@ try {
         if ($errors['fio']) {
             setcookie('fio_error', '', 100000);
             setcookie('fio_value', '', 100000);
-            $messages[] = '<div class="error">Заполните имя(Использовать только русские буквы).</div>';
+            $messages[] = '<div class="error">Заполните ФИО русскими буквами.</div>';
         }
         if ($errors['tel']) {
             setcookie('tel_error', '', 100000);
             setcookie('tel_value', '', 100000);
-            $messages[] = '<div class="error">Введите номер телефона(Начиная с +7).</div>';
+            $messages[] = '<div class="error">Введите номер телефона правильной длины.</div>';
         }
         if ($errors['email']) {
             setcookie('email_error', '', 100000);

@@ -2,7 +2,7 @@
 require_once ('db.php');
 // require_once ('prob.php');
 // // require_once ('third.php');
-$login = $_POST['login'];
+$login = $_POST['fio'];
 $tel = $_POST['tel'];
 $email = $_POST['email'];
 $date = $_POST['date'];

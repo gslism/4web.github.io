@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <button class="custom-btn btn-1" name="sumbit">Сохранить</button>
+                  <button class="btn btn-primary " type="submit">Сохранить</button>
                 </div>
             </form>
               
