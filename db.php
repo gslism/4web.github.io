@@ -84,11 +84,7 @@ try {
             setcookie('checkt_value', '', 100000);
             $messages[] = '<div class="error">Вы не ознакомились с правилами.</div>';
         }
-        if ($errors['language']) {
-            setcookie('language_error', '', 100000);
-            setcookie('language_value', '', 100000);
-            $messages[] = '<div class="error">Вы не выбрали языки программирования.</div>';
-        }
+        
 
 // printf('Выберите языки программирования: %s', $values['language']);
 // Складываем предыдущие значения полей в массив, если есть.
@@ -195,7 +191,7 @@ else {
             $stmt->execute();
         }
         // Сохраняем куку с признаком успешного сохранения.
-  setcookie('save', '1');
+  setcookie('save', '');
 
   // Делаем перенаправление.
   header('Location: db.php');
