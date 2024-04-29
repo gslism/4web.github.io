@@ -84,6 +84,13 @@ try {
             setcookie('checkt_value', '', 100000);
             $messages[] = '<div class="error">Вы не ознакомились с правилами.</div>';
         }
+        if ($errors['language']) {
+            setcookie('language_error', '', 100000);
+            setcookie('language_value', '', 100000);
+            $messages[] = '<div class="error">Вы не выбрали языки программирования.</div>';
+        }
+
+printf('Выберите языки программирования: %s<br>', $values['language']);
 // Складываем предыдущие значения полей в массив, если есть.
 $values = array();
 $values['fio'] = empty($_COOKIE['fio_value']) ? '' : $_COOKIE['fio_value'];
@@ -139,16 +146,6 @@ else {
     }
     setcookie('checkt_value', $_POST['checkt'],  time() + 30 * 24 * 60 * 60);
 
- if ($errors['language']) {
-            setcookie('language_error', '', 100000);
-            setcookie('language_value', '', 100000);
-            $messages[] = '<div class="error">Вы не выбрали языки программирования.</div>';
-        }
-
-printf('Выберите языки программирования: %s<br>', $values['language']);
-
-
-
    if (empty($_POST['language'])) {
             setcookie('language_error', '1', time() + 24 * 60 * 60);
             $errors = TRUE;
@@ -174,7 +171,7 @@ printf('Выберите языки программирования: %s<br>', $
         setcookie('checkt_error', '', 100000);
       }
         $stmt = $db->prepare("INSERT INTO users (full_name, phone,email,birth_date,gender,bio,contract_agreed) VALUES (:full_name, :phone,:email,:birth_date,:gender,:bio,:contract_agreed)");
-        $login = $_POST['login'];
+        $login = $_POST['fio'];
         $email = $_POST['email'];
         $tel = $_POST['tel'];
         $date = $_POST['date'];
