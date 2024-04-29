@@ -16,7 +16,7 @@
     <div class="tg">
         <div class="wrap lh-lg">
         
-        <form action="register.php" method="POST" id="form" class="row g-3 needs-validation">
+        <form action="db.php" method="POST" id="form" class="row g-3 needs-validation">
                 <h3 id="form" class="text-center">Форма</h3>
 
                 <?php
@@ -97,13 +97,13 @@
 
 
                         <input class="form-check-input" type="radio" name="someGroupName" value="Женский"
-                            id="someRadioId1" <?php echo isset($_COOKIE['someGroupName_value']) && $_COOKIE['someGroupName_value'] === 'Женский' ? 'checked' : ''; ?>>
+                            id="someRadioId1" <?php echo isset($_COOKIE['someGroupName_value']) && $_COOKIE['someGroupName_value'] === 'Женский' ? 'checked' : ''; ?> />
 
                         <label class="form-check-label" for="someRadioId1">Женский</label>
                     </div>
                     <div class="form-check icheck-material-orange">
                         <input class="form-check-input" type="radio" name="someGroupName" value="Мужской"
-                            id="someRadioId2" <?php echo isset($_COOKIE['someGroupName_value']) && $_COOKIE['someGroupName_value'] === 'Мужской' ? 'checked' : ''; ?>>
+                            id="someRadioId2" <?php echo isset($_COOKIE['someGroupName_value']) && $_COOKIE['someGroupName_value'] === 'Мужской' ? 'checked' : ''; ?> />
                         <label class="form-check-label" for="someRadioId2">Мужской</label>
                     </div>
                 </div>
@@ -117,17 +117,17 @@
                     <label for="validationCustom04" class="form-label">Какой у вас любимый язык программирования?</label>
                     <select class="form-select rounded-pill" id="validationCustom04" multiple name="language[]">
                         <option selected="" disabled="" value="">Выберете</option>
-                        <option value="1" <?php if(isset($_COOKIE['language_value']) && in_array('1', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?>>Pascal</option>
-                        <option value="2" <?php if(isset($_COOKIE['language_value']) && in_array('2', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?>>C</option>
-                        <option value="3" <?php if(isset($_COOKIE['language_value']) && in_array('3', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?>>C++</option>
-                        <option value="4" <?php if(isset($_COOKIE['language_value']) && in_array('4', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?>>JavaScript</option>
-                        <option value="5" <?php if(isset($_COOKIE['language_value']) && in_array('5', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?>>PHP</option>
-                        <option value="6" <?php if(isset($_COOKIE['language_value']) && in_array('6', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?>>Python</option>
-                        <option value="7" <?php if(isset($_COOKIE['language_value']) && in_array('7', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?>>Java</option>
-                        <option value="8" <?php if(isset($_COOKIE['language_value']) && in_array('8', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?>>Haskell</option>
-                        <option value="9" <?php if(isset($_COOKIE['language_value']) && in_array('9', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?>>Clojure</option>
-                        <option value="10" <?php if(isset($_COOKIE['language_value']) && in_array('10', unserialize($_COOKIE['language_value'])))   {echo 'selected';} ?>>Prolog</option>
-                        <option value="11" <?php if(isset($_COOKIE['language_value']) && in_array('11', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?>>Scala</option>
+                        <option value="1" <?php if(isset($_COOKIE['language_value']) && in_array('1', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?> >Pascal</option>
+                        <option value="2" <?php if(isset($_COOKIE['language_value']) && in_array('2', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?> >C</option>
+                        <option value="3" <?php if(isset($_COOKIE['language_value']) && in_array('3', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?> >C++</option>
+                        <option value="4" <?php if(isset($_COOKIE['language_value']) && in_array('4', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?> >JavaScript</option>
+                        <option value="5" <?php if(isset($_COOKIE['language_value']) && in_array('5', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?> >PHP</option>
+                        <option value="6" <?php if(isset($_COOKIE['language_value']) && in_array('6', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?> >Python</option>
+                        <option value="7" <?php if(isset($_COOKIE['language_value']) && in_array('7', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?> >Java</option>
+                        <option value="8" <?php if(isset($_COOKIE['language_value']) && in_array('8', unserialize($_COOKIE['language_value'])))  {echo 'selected';}  ?> >Haskell</option>
+                        <option value="9" <?php if(isset($_COOKIE['language_value']) && in_array('9', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?> >Clojure</option>
+                        <option value="10" <?php if(isset($_COOKIE['language_value']) && in_array('10', unserialize($_COOKIE['language_value'])))   {echo 'selected';} ?> >Prolog</option>
+                        <option value="11" <?php if(isset($_COOKIE['language_value']) && in_array('11', unserialize($_COOKIE['language_value'])))  {echo 'selected';} ?> >Scala</option>
                     </select>
                     <div class=" invalid-feedback">
                     </div>
@@ -143,7 +143,7 @@
                         <textarea class="form-control rounded-pill" placeholder="Напишите свою биографию" name="bio"
                             <?php if (isset($_COOKIE['bio_error']) && $_COOKIE['bio_error'] === '1') {
                                 print 'class="error"';
-                            } ?>><?php echo isset($_COOKIE['bio_value']) ? $_COOKIE['bio_value'] : ''; ?></textarea>
+                            } ?><?php echo isset($_COOKIE['bio_value']) ? $_COOKIE['bio_value'] : ''; ?> </textarea>
                     </label>
                 </div>
 

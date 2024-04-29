@@ -145,7 +145,6 @@ else {
    if (empty($_POST['language'])) {
             setcookie('language_error', '1', time() + 24 * 60 * 60);
             $errors = TRUE;
-
         } else {
             $selected_languages = $_POST['language'];
             setcookie('language_value', serialize($selected_languages), time() + 12 * 30 * 24 * 60 * 60);
