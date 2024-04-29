@@ -33,7 +33,7 @@
 
 
                 <div class="col-auto">
-                    <label for="validationCustom01" class="form-label">Фамилия Имя Отчество:</label>
+                    <label for="validationCustom01" class="form-label">Ваше ФИО:</label>
 
 
                     <input type="text" placeholder="ФИО" class="form-control rounded-pill" name="fio" <?php if ($errors['fio']) {
@@ -47,7 +47,7 @@
 
 
                 <div class="col-auto">
-                    <label for="validationCustomUsername" class="form-label">Телефон:
+                    <label for="validationCustomUsername" class="form-label">Ваш номер телефона:
                     </label>
                     <div class="input-group has-validation">
                          <input type="text" class="form-control rounded-pill" placeholder="Введите ваш номер" name="tel"
@@ -114,7 +114,7 @@
 
 
                 <div class="col-auto">
-                    <label for="validationCustom04" class="form-label">Любимый язык программирования</label>
+                    <label for="validationCustom04" class="form-label">Какой у вас любимый язык программирования?</label>
                     <select class="form-select rounded-pill" id="validationCustom04" multiple name="language[]">
                         <option selected="" disabled="" value="">Выберете</option>
                         <option value="1" <?php if(isset($_COOKIE['language_value']) && in_array('1', unserialize($_COOKIE['language_value']))) { echo 'selected'; } ?>>Pascal</option>
@@ -138,7 +138,7 @@
 
                 <div class="col-auto">
                     <label>
-                        Биография:<br />
+                        Расскажите о себе:<br />
 
                         <textarea class="form-control rounded-pill" placeholder="Напишите свою биографию" name="bio"
                             <?php if (isset($_COOKIE['bio_error']) && $_COOKIE['bio_error'] === '1') {

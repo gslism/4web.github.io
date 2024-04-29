@@ -99,13 +99,13 @@ include('index.php');
 else {
     // Проверяем ошибки.
     $errors = FALSE;
-    if (empty($_POST['login']) || !isValidName($_POST['login'])) {
+    if (empty($_POST['fio']) || !isValidName($_POST['fio'])) {
       // Выдаем куку на день с флажком об ошибке в поле fio.
       setcookie('fio_error', '1', time() + 24 * 60 * 60);
       $errors = TRUE;
     }
     // Сохраняем ранее введенное в форму значение на месяц.
-    setcookie('fio_value', $_POST['login'], time() + 30 * 24 * 60 * 60);
+    setcookie('fio_value', $_POST['fio'], time() + 30 * 24 * 60 * 60);
     if (empty($_POST['tel']) || !isValidPhone($_POST['tel'])) {
         setcookie('tel_error', '1', time() + 24 * 60 * 60);
         $errors = TRUE;
