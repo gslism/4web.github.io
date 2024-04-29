@@ -191,7 +191,7 @@ else {
             $stmt->execute();
         }
         // Сохраняем куку с признаком успешного сохранения.
-  setcookie('save', '');
+  setcookie('save', '1');
 
   // Делаем перенаправление.
   header('Location: db.php');
