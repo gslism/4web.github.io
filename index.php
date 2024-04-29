@@ -16,7 +16,7 @@
     <div class="tg">
         <div class="wrap lh-lg">
         
-        <form action="db.php" method="POST" id="form" class="row g-3 needs-validation">
+        <form action="register.php" method="POST" id="form" class="row g-3 needs-validation">
                 <h3 id="form" class="text-center">Форма</h3>
 
                 <?php
