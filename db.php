@@ -42,6 +42,7 @@ try {
         $errors['someGroupName'] = !empty($_COOKIE['someGroupName_error']);
         $errors['bio'] = !empty($_COOKIE['bio_error']);
         $errors['checkt'] = !empty($_COOKIE['checkt_error']);
+        $errors['language'] = !empty($_COOKIE['language_error']);
         // Выдаем сообщения об ошибках.
         if ($errors['fio']) {
             setcookie('fio_error', '', 100000);
@@ -92,6 +93,7 @@ $values['date'] = empty($_COOKIE['date_value']) ? '' : $_COOKIE['date_value'];
 $values['someGroupName'] = empty($_COOKIE['someGroupName_value']) ? '' : $_COOKIE['someGroupName_value'];
 $values['bio'] = empty($_COOKIE['bio_value']) ? '' : $_COOKIE['bio_value'];
 $values['checkt'] = empty($_COOKIE['checkt_value']) ? '' : $_COOKIE['checkt_value'];
+$values['language'] = empty($_COOKIE['language_value']) ? '' : strip_tags($_COOKIE['language_value']);
 include('index.php');
 }
 else {
@@ -136,19 +138,12 @@ else {
         $errors = TRUE;
     }
     setcookie('checkt_value', $_POST['checkt'],  time() + 30 * 24 * 60 * 60);
-    $errors['language'] = !empty($_COOKIE['language_error']);
-
 
  if ($errors['language']) {
             setcookie('language_error', '', 100000);
             setcookie('language_value', '', 100000);
             $messages[] = '<div class="error">Вы не выбрали языки программирования.</div>';
         }
-
-
- $values['language'] = empty($_COOKIE['language_value']) ? '' : strip_tags($_COOKIE['language_value']);
-
-
 
 printf('Выберите языки программирования: %s<br>', $values['language']);
 
@@ -162,9 +157,6 @@ printf('Выберите языки программирования: %s<br>', $
             $selected_languages = $_POST['language'];
             setcookie('language_value', serialize($selected_languages), time() + 12 * 30 * 24 * 60 * 60);
         }
-
-
-
  setcookie('language_error', '', 100000);
     if ($errors) {
         // При наличии ошибок перезагружаем страницу и завершаем работу скрипта.
